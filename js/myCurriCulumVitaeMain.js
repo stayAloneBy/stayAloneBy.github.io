@@ -164,6 +164,7 @@ window.onload = function(){
     var wechatBox = document.getElementById("wechatBox");
     var wechatClose = document.getElementsByClassName("wechat-close")[0];
     var maskLayer = document.getElementById("maskLayer");
+    var cancelAuto = document.getElementById("cancelAuto");
 
 
     for(var i = 0 ; i < navbarLi.length ; i++ ){
@@ -204,8 +205,32 @@ window.onload = function(){
         alphaPlay(wechatBox,"hidden");
         maskLayer.style.display = "none";
     };
-
-
+    var index = 0;
+    var time =setInterval(function(){
+        if(index >= 5){
+            index = -1;
+        }
+        index += 1;
+        changePage(index);
+        return index;
+    },3000);
+    cancelAuto.onclick = function(){
+        if(cancelAuto.innerHTML == "取消自动播放"){
+            cancelAuto.innerHTML = "恢复自动播放";
+            clearInterval(time);
+        }
+        else{
+            cancelAuto.innerHTML = "取消自动播放";
+            time = setInterval(function(){
+                if(index >= 5){
+                    index = -1;
+                }
+                index += 1;
+                changePage(index);
+                return index;
+            },3000);
+        }
+    };
 };
 
 
