@@ -894,7 +894,27 @@ item:hover p {
 }
 
 .contactInformation .expectationListImg {
+    box-sizing: border-box;
     margin-top: 14%;
+}
+.contactInformation .expectationListImg img{
+    margin-right:4px;
+    -webkit-transition: all 0.5s linear ;
+    -moz-transition: all 0.5s linear ;
+    -ms-transition: all 0.5s linear ;
+    -o-transition: all 0.5s linear ;
+    transition: all 0.5s linear ;
+}
+.contactInformation .expectationListImg img:hover{
+    border:1px solid #000;
+    border-radius:4px;
+    -webkit-box-shadow: 1px 1px 2px #000;
+    -moz-box-shadow: 1px 1px 2px #000;
+    box-shadow: 1px 1px 2px #000;
+}
+.changeB{
+    width:154px;
+    height:60px;
 }
 
 /*导航圆点部分*/
